@@ -96,10 +96,10 @@ vector<Token> tokenize(const string& input) {
                 break;
 
             case '"':
-                tokens.push_back({DOUBLE_QUOTE, """});
+                tokens.push_back({DOUBLE_QUOTE, "\""});
                 break;
 
-            case ''':
+            case '\'':
                 tokens.push_back({RIGHT_PARENTHESIS, "'"});
                 break;
 
@@ -123,8 +123,8 @@ vector<Token> tokenize(const string& input) {
                 tokens.push_back({MINUS, "-"});
                 break;
 
-            case '\':
-                tokens.push_back({DIVIDE, "="});
+            case '\\':
+                tokens.push_back({DIVIDE, "\\"});
                 break;
 
             case '%':
@@ -176,7 +176,7 @@ void displayTokens(const vector<Token>& tokens) {
             cout << "LEFT_PARENTHESIS";
             break;
 
-            
+
 
 
         }
