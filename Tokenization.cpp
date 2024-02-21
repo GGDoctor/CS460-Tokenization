@@ -69,101 +69,100 @@ vector<Token> tokenize(const string& input) {
     bool inComment = false;
     bool inString = false;
 
-    //for ()
+    for (size_t i=0;i < input.size(); ++i) {
+        switch(input[i]){
+            case '(':
+                tokens.push_back({LEFT_PARENTHESIS, "("});
+                break;
+                
+            case ')':
+                tokens.push_back({RIGHT_PARENTHESIS, ")"});
+                break;
 
-    switch(){
-        case '(':
-            tokens.push_back({LEFT_PARENTHESIS, "("});
-            break;
+            case '[':
+                tokens.push_back({LEFT_BRACKET, "["});
+                break;
+
+            case ']':
+                tokens.push_back({RIGHT_BRACKET, "]"});
+                break;
+
+            case '{':
+                tokens.push_back({RIGHT_PARENTHESIS, "{"});
+                break;
+
+            case '}':
+                tokens.push_back({RIGHT_PARENTHESIS, "}"});
+                break;
+
+            case '"':
+                tokens.push_back({DOUBLE_QUOTE, """});
+                break;
+
+            case ''':
+                tokens.push_back({RIGHT_PARENTHESIS, "'"});
+                break;
+
+            case ';':
+                tokens.push_back({SEMICOLON, ";"});
+                break;
             
-        case ')':
-            tokens.push_back({RIGHT_PARENTHESIS, ")"});
-            break;
+            case ',':
+                tokens.push_back({COMMA, ","});
+                break;
 
-        case '[':
-            tokens.push_back({LEFT_BRACKET, "["});
-            break;
+            case '=':
+                tokens.push_back({ASSIGNMENT, "="});
+                break;
 
-        case ']':
-            tokens.push_back({RIGHT_BRACKET, "]"});
-            break;
+            case '+':
+                tokens.push_back({PLUS, "+"});
+                break;
 
-        case '{':
-            tokens.push_back({RIGHT_PARENTHESIS, "{"});
-            break;
+            case '-':
+                tokens.push_back({MINUS, "-"});
+                break;
 
-        case '}':
-            tokens.push_back({RIGHT_PARENTHESIS, "}"});
-            break;
+            case '\':
+                tokens.push_back({DIVIDE, "="});
+                break;
 
-        case '"':
-            tokens.push_back({DOUBLE_QUOTE, """});
-            break;
+            case '%':
+                tokens.push_back({MODULO, "%"});
+                break;
 
-        case ''':
-            tokens.push_back({RIGHT_PARENTHESIS, "'"});
-            break;
+            case '^':
+                tokens.push_back({CARAT, "^"});
+                break;
+            
+            case '<':
+                tokens.push_back({LT, "<"});
+                break;
+            
+            case '>':
+                tokens.push_back({GT, ">"});
+                break;
+            
+            case '<=':
+                tokens.push_back({LT_EQUAL, "<="});
+                break;
 
-         case ';':
-            tokens.push_back({SEMICOLON, ";"});
-            break;
-        
-        case ',':
-            tokens.push_back({COMMA, ","});
-            break;
+            case '>=':
+                tokens.push_back({GT_EQUAL, ">="});
+                break;
 
-        case '=':
-            tokens.push_back({ASSIGNMENT, "="});
-            break;
+            case '&':
+                tokens.push_back({BOOLEAN_AND_OPERATOR, "&"});
+                break;
 
-        case '+':
-            tokens.push_back({PLUS, "+"});
-            break;
-
-        case '-':
-            tokens.push_back({MINUS, "-"});
-            break;
-
-        case '\':
-            tokens.push_back({DIVIDE, "="});
-            break;
-
-        case '%':
-            tokens.push_back({MODULO, "%"});
-            break;
-
-        case '^':
-            tokens.push_back({CARAT, "^"});
-            break;
-        
-        case '<':
-            tokens.push_back({LT, "<"});
-            break;
-        
-         case '>':
-            tokens.push_back({GT, ">"});
-            break;
-        
-         case '<=':
-            tokens.push_back({LT_EQUAL, "<="});
-            break;
-
-         case '>=':
-            tokens.push_back({GT_EQUAL, ">="});
-            break;
-
-        case '&':
-            tokens.push_back({BOOLEAN_AND_OPERATOR, "&"});
-            break;
-
-        case '|':
-            tokens.push_back({BOOLEAN_OR_OPERATOR, "|"});
-            break;
-        
-        case '!':
-            tokens.push_back({BOOLEAN_NOT_OPERATOR, "!"});
-            break;
-    }
+            case '|':
+                tokens.push_back({BOOLEAN_OR_OPERATOR, "|"});
+                break;
+            
+            case '!':
+                tokens.push_back({BOOLEAN_NOT_OPERATOR, "!"});
+                break;
+        }
 }
 
 
@@ -171,6 +170,16 @@ void displayTokens(const vector<Token>& tokens) {
     cout << "Token list: " << endl << endl;
     for (const auto& token: tokens) {
         cout << "Token type: ";
+        switch (token.type) {
+
+            case LEFT_PARENTHESIS:
+            cout << "LEFT_PARENTHESIS";
+            break;
+
+            
+
+
+        }
     }
 }
 
