@@ -22,14 +22,33 @@ enum TokenType {
     STRING,
     LEFT_PARENTHESIS,
     RIGHT_PARENTHESIS,
+    LEFT_BRACKET,
+    RIGHT_BRACKET,
     LEFT_BRACE,
     RIGHT_BRACE,
-    ASSIGNMENT,
-    COMMA,
-    SEMICOLON,
     DOUBLE_QUOTE,
-    INVAlID_INTEGER
+    SINGLE_QUOTE,
+    SEMICOLON,
+    COMMA,
+    ASSIGNMENT,
+    PLUS,
+    MINUS,
+    DIVIDE,
+    MODULO,
+    CARAT,
+    LT,
+    GT,
+    LT_EQUAL,
+    GT_EQUAL,
+    BOOLEAN_AND_OPERATOR,
+    BOOLEAN_OR_OPERATOR,
+    BOOLEAN_NOT_OPERATOR,
+    BOOLEAN_EQUAL,
+    BOOLEAN_NOT_EQUAL,
+    BOOLEAN_TRUE,
+    BOOLEAN_FALSE,
 };
+
 
 
 //struct Token
@@ -37,13 +56,123 @@ enum TokenType {
 struct Token {
     TokenType type;
     string lexan;
-}
+};
+
+
+
+//This needs a ton of work 
 
 
 vector<Token> tokenize(const string& input) {
-    
+    vector<Token> tokens;
+    string currentToken; //Read char by char
+    bool inComment = false;
+    bool inString = false;
+
+    //for ()
+
+    switch(){
+        case '(':
+            tokens.push_back({LEFT_PARENTHESIS, "("});
+            break;
+            
+        case ')':
+            tokens.push_back({RIGHT_PARENTHESIS, ")"});
+            break;
+
+        case '[':
+            tokens.push_back({LEFT_BRACKET, "["});
+            break;
+
+        case ']':
+            tokens.push_back({RIGHT_BRACKET, "]"});
+            break;
+
+        case '{':
+            tokens.push_back({RIGHT_PARENTHESIS, "{"});
+            break;
+
+        case '}':
+            tokens.push_back({RIGHT_PARENTHESIS, "}"});
+            break;
+
+        case '"':
+            tokens.push_back({DOUBLE_QUOTE, """});
+            break;
+
+        case ''':
+            tokens.push_back({RIGHT_PARENTHESIS, "'"});
+            break;
+
+         case ';':
+            tokens.push_back({SEMICOLON, ";"});
+            break;
+        
+        case ',':
+            tokens.push_back({COMMA, ","});
+            break;
+
+        case '=':
+            tokens.push_back({ASSIGNMENT, "="});
+            break;
+
+        case '+':
+            tokens.push_back({PLUS, "+"});
+            break;
+
+        case '-':
+            tokens.push_back({MINUS, "-"});
+            break;
+
+        case '\':
+            tokens.push_back({DIVIDE, "="});
+            break;
+
+        case '%':
+            tokens.push_back({MODULO, "%"});
+            break;
+
+        case '^':
+            tokens.push_back({CARAT, "^"});
+            break;
+        
+        case '<':
+            tokens.push_back({LT, "<"});
+            break;
+        
+         case '>':
+            tokens.push_back({GT, ">"});
+            break;
+        
+         case '<=':
+            tokens.push_back({LT_EQUAL, "<="});
+            break;
+
+         case '>=':
+            tokens.push_back({GT_EQUAL, ">="});
+            break;
+
+        case '&':
+            tokens.push_back({BOOLEAN_AND_OPERATOR, "&"});
+            break;
+
+        case '|':
+            tokens.push_back({BOOLEAN_OR_OPERATOR, "|"});
+            break;
+        
+        case '!':
+            tokens.push_back({BOOLEAN_NOT_OPERATOR, "!"});
+            break;
+    }
 }
 
+
+void displayTokens(const vector<Token>& tokens) {
+    cout << "Token list: " << endl << endl;
+    for (const auto& token: tokens) {
+        cout << "Token type: ";
+    }
+}
 
 
 int main(int argc, char *argv[]) {
