@@ -163,6 +163,7 @@ vector<Token> tokenize(const string& input) {
                 tokens.push_back({BOOLEAN_NOT_OPERATOR, "!"});
                 break;
         }
+    }
 }
 
 
@@ -197,6 +198,18 @@ int main(int argc, char *argv[]) {
         std::cerr << "Error. Unable to open the file :( \n"; // Error out if we are unable to open up the file
         return 1;
     }
+
+    //Create the suggested State
+enum State {
+    ANYTHING, 
+    SLASH,
+    ASTERICK,
+    SINGLE_LINE_COMMENT, // A comment pertaining '//'
+    MULTI_LINE_COMMENT, // A comment pertaining '/* bla */
+    SINGLE_QUOTE,
+    DOUBLE_QUOTE, 
+    Error
+};
 
     State state = ANYTHING;
     string result = "";
