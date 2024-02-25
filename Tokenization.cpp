@@ -1,5 +1,6 @@
-// Ignore comments
-// The objective of this project is to take the first step torwards building an interpreter, ignoring comments
+// Tokenization
+// The objective of this project is to take the second step torwards building an interpreter, tokenizing a file
+
 // This project is developed by the following students:
 // Haley Joerger
 // Adam Lyday
@@ -326,16 +327,15 @@ enum State {
          cout << "ERROR: Program contains C-style, unterminated comment on line " << line - mult_line << endl;
     }
     else{
-        cout << result; 
+        //cout << result; 
     }
     inputFile.close(); // Close the file when we are done working.
-    //std::cout << result;
-
+    tokenize(result);
     return 0;
 }
 
 
 //I downloaded the file and put them into the project
-//then did a g++ -o IgnoreComments IgnoreComments.cpp
-//then did ./IgnoreComments programming_assignment_1-test_file_2.c
+//then did a g++ -o Tokenization Tokenization.cpp
+//then did ./Tokenization programming_assignment_2-test_file_2.c
 //this worked.
