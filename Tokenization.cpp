@@ -56,7 +56,7 @@ enum TokenType {
 //Store store token information
 struct Token {
     TokenType type;
-    string lexan;
+    string character;
 };
 
 
@@ -75,96 +75,140 @@ vector<Token> tokenize(const string& input) {
         switch(input[i]){
             case '(':
                 inputToken.type = LEFT_PARENTHESIS;
-                inputToken.lexan = "(";
+                inputToken.character = "(";
                 tokens.push_back(inputToken);
                 break;
                 
             case ')':
-                tokens.push_back({RIGHT_PARENTHESIS, ")"});
+                inputToken.type = RIGHT_PARENTHESIS;
+                inputToken.character = ")";
+                tokens.push_back(inputToken);
                 break;
 
             case '[':
-                tokens.push_back({LEFT_BRACKET, "["});
+                inputToken.type = LEFT_BRACKET;
+                inputToken.character = "[]";
+                tokens.push_back(inputToken);
                 break;
 
             case ']':
-                tokens.push_back({RIGHT_BRACKET, "]"});
+                inputToken.type = RIGHT_BRACKET;
+                inputToken.character = "]";
+                tokens.push_back(inputToken);
                 break;
 
             case '{':
-                tokens.push_back({RIGHT_PARENTHESIS, "{"});
+                inputToken.type = LEFT_BRACKET;
+                inputToken.character = "{";
+                tokens.push_back(inputToken);
                 break;
 
             case '}':
-                tokens.push_back({RIGHT_PARENTHESIS, "}"});
+                inputToken.type = RIGHT_BRACKET;
+                inputToken.character = "}";
+                tokens.push_back(inputToken);
                 break;
 
             case '"':
-                tokens.push_back({DOUBLE_QUOTE, "\""});
+                inputToken.type = DOUBLE_QUOTE;
+                inputToken.character = "\"";
+                tokens.push_back(inputToken);
                 break;
 
             case '\'':
-                tokens.push_back({RIGHT_PARENTHESIS, "'"});
+                inputToken.type = SINGLE_QUOTE;
+                inputToken.character = "\'";
+                tokens.push_back(inputToken);
                 break;
 
             case ';':
-                tokens.push_back({SEMICOLON, ";"});
+                inputToken.type = SEMICOLON;
+                inputToken.character = ";";
+                tokens.push_back(inputToken);
                 break;
             
             case ',':
-                tokens.push_back({COMMA, ","});
+                inputToken.type = COMMA;
+                inputToken.character = ",";
+                tokens.push_back(inputToken);
                 break;
 
             case '=':
-                tokens.push_back({ASSIGNMENT, "="});
+                inputToken.type = ASSIGNMENT;
+                inputToken.character = "=";
+                tokens.push_back(inputToken);
                 break;
 
             case '+':
-                tokens.push_back({PLUS, "+"});
+                inputToken.type = PLUS;
+                inputToken.character = "+";
+                tokens.push_back(inputToken);
                 break;
 
             case '-':
-                tokens.push_back({MINUS, "-"});
+                inputToken.type = MINUS;
+                inputToken.character = "-";
+                tokens.push_back(inputToken);
                 break;
 
             case '\\':
-                tokens.push_back({DIVIDE, "\\"});
+                inputToken.type = DIVIDE;
+                inputToken.character = "\\";
+                tokens.push_back(inputToken);
                 break;
 
             case '%':
-                tokens.push_back({MODULO, "%"});
+                inputToken.type = MODULO;
+                inputToken.character = "%";
+                tokens.push_back(inputToken);
                 break;
 
             case '^':
-                tokens.push_back({CARAT, "^"});
+                inputToken.type = CARAT;
+                inputToken.character = "^";
+                tokens.push_back(inputToken);
                 break;
             
             case '<':
-                tokens.push_back({LT, "<"});
+                inputToken.type = LT;
+                inputToken.character = "<";
+                tokens.push_back(inputToken);
                 break;
             
             case '>':
-                tokens.push_back({GT, ">"});
+                inputToken.type = GT;
+                inputToken.character = ">";
+                tokens.push_back(inputToken);
                 break;
             
             case '<=':
-                tokens.push_back({LT_EQUAL, "<="});
+                inputToken.type = LT_EQUAL;
+                inputToken.character = "<=";
+                tokens.push_back(inputToken);
                 break;
 
             case '>=':
-                tokens.push_back({GT_EQUAL, ">="});
+                inputToken.type = GT_EQUAL;
+                inputToken.character = ">=";
+                tokens.push_back(inputToken);
                 break;
 
             case '&':
-                tokens.push_back({BOOLEAN_AND_OPERATOR, "&"});
+                inputToken.type = BOOLEAN_AND_OPERATOR;
+                inputToken.character = "&";
+                tokens.push_back(inputToken);
                 break;
 
             case '|':
-                tokens.push_back({BOOLEAN_OR_OPERATOR, "|"});
+                inputToken.type = BOOLEAN_OR_OPERATOR;
+                inputToken.character = "|";
+                tokens.push_back(inputToken);
                 break;
             
             case '!':
-                tokens.push_back({BOOLEAN_NOT_OPERATOR, "!"});
+                inputToken.type = BOOLEAN_NOT_OPERATOR;
+                inputToken.character = "!";
+                tokens.push_back(inputToken);
                 break;
         }
     }
@@ -327,15 +371,16 @@ enum State {
          cout << "ERROR: Program contains C-style, unterminated comment on line " << line - mult_line << endl;
     }
     else{
-        //cout << result; 
+        cout << result; 
     }
     inputFile.close(); // Close the file when we are done working.
-    tokenize(result);
+    //std::cout << result;
+
     return 0;
 }
 
 
 //I downloaded the file and put them into the project
-//then did a g++ -o Tokenization Tokenization.cpp
-//then did ./Tokenization programming_assignment_2-test_file_2.c
+//then did a g++ -o IgnoreComments IgnoreComments.cpp
+//then did ./IgnoreComments programming_assignment_1-test_file_2.c
 //this worked.
