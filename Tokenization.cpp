@@ -370,17 +370,16 @@ enum State {
     }else if(state == MULTI_LINE_COMMENT){
          cout << "ERROR: Program contains C-style, unterminated comment on line " << line - mult_line << endl;
     }
-    else{
-        cout << result; 
-    }
+    // else{
+    //     cout << result; 
+    // }
     inputFile.close(); // Close the file when we are done working.
-    //std::cout << result;
-
-    return 0;
+    tokenize(result);
+    // return 0;
 }
 
 
 //I downloaded the file and put them into the project
-//then did a g++ -o IgnoreComments IgnoreComments.cpp
-//then did ./IgnoreComments programming_assignment_1-test_file_2.c
+//then did a g++ -o Tokenization Tokenization.cpp
+//then did ./Tokenization programming_assignment_2-test_file_2.c
 //this worked.
