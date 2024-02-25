@@ -70,9 +70,12 @@ vector<Token> tokenize(const string& input) {
     bool inString = false;
 
     for (size_t i=0;i < input.size(); ++i) {
+        Token inputToken;
         switch(input[i]){
             case '(':
-                tokens.push_back({LEFT_PARENTHESIS, "("});
+                inputToken.type = LEFT_PARENTHESIS;
+                inputToken.lexan = "(";
+                tokens.push_back(inputToken);
                 break;
                 
             case ')':
