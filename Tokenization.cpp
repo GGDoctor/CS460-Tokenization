@@ -82,6 +82,8 @@ vector<Token> tokenize(const string& input) {
                 stringToken.character += input[i++];
             }
 
+             
+
             tokens.push_back(stringToken);
             
         }
@@ -465,6 +467,8 @@ void displayTokens(const vector<Token>& tokens) {
 }
 
 
+
+
 int main(int argc, char *argv[]) {
 
     if (argc != 2 ) {
@@ -516,12 +520,10 @@ enum State {
                 }else if (currentChar == '\n'){ //Check for new line
                     result += currentChar;
                     line += 1; 
-                }else if (currentChar == '*'){  //Check if  */ appears before  /* 
-                    char nextChar = inputFile.peek();
-                    state = (nextChar == '/') ? Error : ANYTHING;
-                } else {
+                }else {
                     result += currentChar;
                 }
+                cout << currentChar;
                 break;
             
             //Handle Slash
@@ -602,13 +604,9 @@ enum State {
     }else if(state == MULTI_LINE_COMMENT){
          cout << "ERROR: Program contains C-style, unterminated comment on line " << line - mult_line << endl;
     }
-    // else{
-    //     cout << result; 
-    // }
     inputFile.close(); // Close the file when we are done working.
     vector<Token> tokens = tokenize(result);
     displayTokens(tokens);
-    // return 0;
 }
 
 
