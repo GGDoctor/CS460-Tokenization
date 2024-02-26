@@ -289,6 +289,24 @@ vector<Token> tokenize(const string& input) {
                 break;
 
             default:
+                if (isdigit(input[i])) {
+                    while (isdigit(input[i])) {
+                        inputToken.character += input[i++];
+                    }
+                    inputToken.type = INTEGER;
+                } else {
+                    while (!isspace(input[i]) && input[i] != ')' && input[i] != ';') {
+                        inputToken.character += input[i++];
+                    }
+                    inputToken.type = IDENTIFIER;
+                }
+                i--; // Move back one position to handle the next character correctly
+                tokens.push_back(inputToken);
+                break;
+
+
+
+
                 if (std::isdigit(input[i])) {
                     while (!std::isspace(input[i]) && input[i] != ')' && input[i] != ';') {
                         if (!isdigit(input[i])) {
@@ -308,6 +326,8 @@ vector<Token> tokenize(const string& input) {
 
                     inputToken.type = IDENTIFIER;
                 }
+
+
 
                 i--;
                 tokens.push_back(inputToken);
