@@ -13,6 +13,7 @@
 #include <string>
 #include <vector> 
 #include <cctype>
+#include <algorithm>
 using namespace std;
 
 
@@ -50,6 +51,8 @@ enum TokenType {
     BOOLEAN_TRUE,
     BOOLEAN_FALSE,
 };
+
+vector<char> listOfSymbols = {'(', ')', '[', ']', '{', '}', '\"', '\'', ';', ',', '=', '+', '-', '\\', '*', '%', '^', '>', '<', '&', '|', '!'};
 
 
 
@@ -290,8 +293,23 @@ vector<Token> tokenize(const string& input) {
                 break;
 
             default:
+                if (isdigit(input[i])) {
+                    while (isdigit(input[i])) {
+                        inputToken.character += input[i++];
+                    }
+                    inputToken.type = INTEGER;
+                } else {
+                    while (!isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
+                        inputToken.character += input[i++];
+                    }
+                    inputToken.type = IDENTIFIER;
+                }
+                i--; // Move back one position to handle the next character correctly
+                tokens.push_back(inputToken);
+                break;
+
                 if (std::isdigit(input[i])) {
-                    while (!std::isspace(input[i]) && input[i] != ')' && input[i] != ';') {
+                    while (!std::isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
                         if (!isdigit(input[i])) {
                             std::cout << "Syntax error on line " << lineNumber << ": invalid integer\n";
                             exit(0);
@@ -302,9 +320,9 @@ vector<Token> tokenize(const string& input) {
 
                     inputToken.type = INTEGER;
                     
+                    
                 } else {
-                    while (!std::isspace(input[i]) && input[i] != ')' 
-                            && input[i] != ';' && input[i] != ',') {
+                    while (!std::isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
                         inputToken.character += input[i++];
                     }
 
@@ -475,6 +493,7 @@ void displayTokens(const vector<Token>& tokens) {
 
 int main(int argc, char *argv[]) {
 
+    
     if (argc != 2 ) {
         cerr << "Error! There is not a correct number of command line arguments.\n";
         return 1;
@@ -524,13 +543,13 @@ enum State {
                 }else if (currentChar == '\n'){ //Check for new line
                     result += currentChar;
                     line += 1; 
-                }//else if (currentChar == '*'){  //Check if  */ appears before  /* 
-                    //char nextChar = inputFile.peek();
-                    //state = (nextChar == '/') ? Error : ANYTHING;
-                /*}*/ else {
+                }else if (currentChar == '*'){  //Check if  */ appears before  /* 
+                    char nextChar = inputFile.peek();
+                    state = (nextChar == '/') ? Error : ANYTHING;
+                } else {
                     result += currentChar;
                 }
-                //cout << currentChar;
+                cout << currentChar;
                 break;
             
             //Handle Slash
