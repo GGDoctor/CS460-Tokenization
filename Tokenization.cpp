@@ -78,7 +78,7 @@ vector<Token> tokenize(const string& input) {
             Token stringToken;
             stringToken.type = STRING;
 
-            while (input[i] != '"') {
+            while (input[i] != tokens.back().character[0]) {
                 stringToken.character += input[i++];
             }
 
@@ -147,6 +147,7 @@ vector<Token> tokenize(const string& input) {
                 inputToken.type = SINGLE_QUOTE;
                 inputToken.character = "\'";
                 tokens.push_back(inputToken);
+                inString = !inString;
                 break;
 
             case ';':
@@ -300,7 +301,8 @@ vector<Token> tokenize(const string& input) {
                     inputToken.type = INTEGER;
                     
                 } else {
-                    while (!std::isspace(input[i]) && input[i] != ')' && input[i] != ';') {
+                    while (!std::isspace(input[i]) && input[i] != ')' 
+                            && input[i] != ';' && input[i] != ',') {
                         inputToken.character += input[i++];
                     }
 
@@ -516,10 +518,10 @@ enum State {
                 }else if (currentChar == '\n'){ //Check for new line
                     result += currentChar;
                     line += 1; 
-                }else if (currentChar == '*'){  //Check if  */ appears before  /* 
-                    char nextChar = inputFile.peek();
-                    state = (nextChar == '/') ? Error : ANYTHING;
-                } else {
+                }//else if (currentChar == '*'){  //Check if  */ appears before  /* 
+                    //char nextChar = inputFile.peek();
+                    //state = (nextChar == '/') ? Error : ANYTHING;
+                /*}*/ else {
                     result += currentChar;
                 }
                 break;
