@@ -1,5 +1,5 @@
 # Compiler
-CC = g++
+CC = g++ -std=c++17
 
 # Source files
 SRCS = Tokenization.cpp

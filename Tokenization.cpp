@@ -182,11 +182,11 @@ vector<Token> tokenize(const string& input) {
                 break;
 
             case '-':
-                if (std::isdigit(nextChar)) {
+                if (isdigit(nextChar)) {
                     i++;
                     inputToken.type = INTEGER;
                     inputToken.character = '-';
-                    while (std::isdigit(input[i])) {
+                    while (isdigit(input[i])) {
                         inputToken.character += input[i++];
                     }
 
@@ -287,10 +287,10 @@ vector<Token> tokenize(const string& input) {
                 break;
 
             default:
-                if (std::isdigit(input[i])) {
-                    while (!std::isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
+                if (isdigit(input[i])) {
+                    while (!isspace(input[i]) && !(find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
                         if (!isdigit(input[i])) {
-                            std::cout << "Syntax error on line " << lineNumber << ": invalid integer\n";
+                            cout << "Syntax error on line " << lineNumber << ": invalid integer\n";
                             exit(0);
                         }
 
@@ -301,7 +301,7 @@ vector<Token> tokenize(const string& input) {
                     
                     
                 } else {
-                    while (!std::isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
+                    while (!isspace(input[i]) && !(find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
                         inputToken.character += input[i++];
                     }
 
@@ -322,17 +322,11 @@ vector<Token> tokenize(const string& input) {
 
 
 void displayTokens(const vector<Token>& tokens) {
-    std::ofstream outputFile("results.txt");
+    cout << "Token list: " << endl << endl;
 
-    if (!outputFile) {
-        std::cerr << "Couldn't open output file\n";
-        exit(1);
-    }
-
-    outputFile << "Token list: " << endl << endl;
     for (const auto& token: tokens) {
-        std::string tokenType = "Token type: ";
-        std::string tokenString = "Token: ";
+        string tokenType = "Token type: ";
+        string tokenString = "Token: ";
         switch (token.type) {
             case IDENTIFIER:
                 tokenType += "IDENTIFIER";
@@ -461,10 +455,8 @@ void displayTokens(const vector<Token>& tokens) {
         }
 
         tokenString += token.character;
-        outputFile << tokenType << '\n' << tokenString << '\n' << '\n';
+        cout << tokenType << '\n' << tokenString << '\n' << '\n';
     }
-
-    outputFile.close();
 }
 
 
@@ -481,7 +473,7 @@ int main(int argc, char *argv[]) {
     ifstream inputFile(filename.c_str());
 
     if (!inputFile) {
-        std::cerr << "Error. Unable to open the file :( \n"; // Error out if we are unable to open up the file
+        cerr << "Error. Unable to open the file :( \n"; // Error out if we are unable to open up the file
         return 1;
     }
 
@@ -608,6 +600,8 @@ enum State {
     inputFile.close(); // Close the file when we are done working.
     vector<Token> tokens = tokenize(result);
     displayTokens(tokens);
+
+    return 0;
 }
 
 
