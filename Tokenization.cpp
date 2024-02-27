@@ -65,9 +65,6 @@ struct Token {
 
 
 
-//This needs a ton of work 
-
-
 vector<Token> tokenize(const string& input) {
     vector<Token> tokens;
     string currentToken; //Read char by char
@@ -90,9 +87,6 @@ vector<Token> tokenize(const string& input) {
             tokens.push_back(stringToken);
             
         }
-
-        //if (std::isspace(input[i]))
-          //  continue;
 
         char nextChar = i + 1 < input.size() ? input[i + 1] : 0; 
 
@@ -491,7 +485,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    //Create the suggested State
+//Create the suggested State
 enum State {
     ANYTHING, 
     SLASH,
@@ -531,7 +525,6 @@ enum State {
                 } else {
                     result += currentChar;
                 }
-                //cout << currentChar;
                 break;
             
             //Handle Slash
@@ -585,7 +578,7 @@ enum State {
                 } 
                 break;
 
-            // needs code to handle escape characters
+            //Needs code to handle escape characters
             case SINGLE_QUOTE: 
                 if (currentChar == '\'') {
                     state = ANYTHING;
@@ -593,7 +586,7 @@ enum State {
                 result += currentChar;
                 break;
 
-            // needs code to handle escape characters
+            // Neds code to handle escape characters
             case DOUBLE_QUOTE:
                 if (currentChar == '"') {
                     state = ANYTHING;
@@ -618,7 +611,5 @@ enum State {
 }
 
 
-//I downloaded the file and put them into the project
-//then did a g++ -o Tokenization Tokenization.cpp
-//then did ./Tokenization programming_assignment_2-test_file_2.c
-//this worked.
+// For instructions on how to run, please see our read me file.
+// This project has successfully run on Blue!
