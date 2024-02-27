@@ -1,351 +1,6 @@
 Token list: 
 
 Token type: IDENTIFIER
-Token: function
-
-Token type: IDENTIFIER
-Token: int
-
-Token type: IDENTIFIER
-Token: hexdigit2int
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: char
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: int
-
-Token type: IDENTIFIER
-Token: i
-
-Token type: COMMA
-Token: ,
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: ASSIGNMENT
-Token: =
-
-Token type: INTEGER
-Token: -1
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: IDENTIFIER
-Token: if
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: GT_EQUAL
-Token: >=
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: 0
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: BOOLEAN_AND_OPERATOR
-Token: &&
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: LT_EQUAL
-Token: <=
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: 9
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: ASSIGNMENT
-Token: =
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: MINUS
-Token: -
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: 0
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: RIGHT_BRACE
-Token: }
-
-Token type: IDENTIFIER
-Token: else
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: if
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: GT_EQUAL
-Token: >=
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: a
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: BOOLEAN_AND_OPERATOR
-Token: &&
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: LT_EQUAL
-Token: <=
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: f
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: ASSIGNMENT
-Token: =
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: MINUS
-Token: -
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: a
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: PLUS
-Token: +
-
-Token type: INTEGER
-Token: 10
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: RIGHT_BRACE
-Token: }
-
-Token type: IDENTIFIER
-Token: else
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: if
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: GT_EQUAL
-Token: >=
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: A
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: BOOLEAN_AND_OPERATOR
-Token: &&
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: LT_EQUAL
-Token: <=
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: F
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: ASSIGNMENT
-Token: =
-
-Token type: IDENTIFIER
-Token: hex_digit
-
-Token type: MINUS
-Token: -
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: STRING
-Token: A
-
-Token type: SINGLE_QUOTE
-Token: '
-
-Token type: PLUS
-Token: +
-
-Token type: INTEGER
-Token: 10
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: RIGHT_BRACE
-Token: }
-
-Token type: RIGHT_BRACE
-Token: }
-
-Token type: RIGHT_BRACE
-Token: }
-
-Token type: IDENTIFIER
-Token: return
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: RIGHT_BRACE
-Token: }
-
-Token type: IDENTIFIER
 Token: procedure
 
 Token type: IDENTIFIER
@@ -367,16 +22,25 @@ Token type: IDENTIFIER
 Token: char
 
 Token type: IDENTIFIER
-Token: hexnum
+Token: buffer
 
 Token type: LEFT_BRACKET
 Token: [
 
 Token type: INTEGER
-Token: 9
+Token: 256
 
 Token type: RIGHT_BRACKET
 Token: ]
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: IDENTIFIER
+Token: bool
+
+Token type: IDENTIFIER
+Token: is_palindrome
 
 Token type: SEMICOLON
 Token: ;
@@ -391,55 +55,82 @@ Token type: COMMA
 Token: ,
 
 Token type: IDENTIFIER
-Token: digit
+Token: num_bytes_read
 
 Token type: COMMA
 Token: ,
 
 Token type: IDENTIFIER
-Token: number
+Token: half_num_bytes_read
 
 Token type: SEMICOLON
 Token: ;
 
 Token type: IDENTIFIER
-Token: number
+Token: buffer
 
-Token type: ASSIGNMENT
-Token: =
+Token type: LEFT_BRACKET
+Token: [
 
 Token type: INTEGER
-Token: 0
+Token: 255
 
-Token type: SEMICOLON
-Token: ;
-
-Token type: IDENTIFIER
-Token: hexnum
+Token type: RIGHT_BRACKET
+Token: ]
 
 Token type: ASSIGNMENT
 Token: =
 
-Token type: DOUBLE_QUOTE
-Token: "
+Token type: SINGLE_QUOTE
+Token: '
 
 Token type: STRING
-Token: feed\x0
+Token: \0
 
-Token type: DOUBLE_QUOTE
-Token: "
+Token type: SINGLE_QUOTE
+Token: '
 
 Token type: SEMICOLON
 Token: ;
 
 Token type: IDENTIFIER
-Token: digit
+Token: num_bytes_read
 
 Token type: ASSIGNMENT
 Token: =
 
+Token type: IDENTIFIER
+Token: read
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: COMMA
+Token: ,
+
+Token type: IDENTIFIER
+Token: sizeof
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: MINUS
+Token: -
+
 Token type: INTEGER
-Token: 0
+Token: 2
+
+Token type: RIGHT_PARENTHESIS
+Token: )
 
 Token type: SEMICOLON
 Token: ;
@@ -462,17 +153,251 @@ Token: 0
 Token type: SEMICOLON
 Token: ;
 
-Token type: LEFT_PARENTHESIS
-Token: (
-
 Token type: IDENTIFIER
 Token: i
 
 Token type: LT
 Token: <
 
+Token type: IDENTIFIER
+Token: num_bytes_read
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: PLUS
+Token: +
+
+Token type: PLUS
+Token: +
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: if
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: LEFT_BRACKET
+Token: [
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: RIGHT_BRACKET
+Token: ]
+
+Token type: BOOLEAN_EQUAL
+Token: ==
+
+Token type: SINGLE_QUOTE
+Token: '
+
+Token type: STRING
+Token: \n
+
+Token type: SINGLE_QUOTE
+Token: '
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: LEFT_BRACKET
+Token: [
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: RIGHT_BRACKET
+Token: ]
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: SINGLE_QUOTE
+Token: '
+
+Token type: STRING
+Token: \0
+
+Token type: SINGLE_QUOTE
+Token: '
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: IDENTIFIER
+Token: if
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: GT
+Token: >
+
 Token type: INTEGER
-Token: 4
+Token: 0
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: num_bytes_read
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: RIGHT_BRACE
+Token: }
+
+Token type: IDENTIFIER
+Token: else
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: num_bytes_read
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: INTEGER
+Token: 0
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: RIGHT_BRACE
+Token: }
+
+Token type: RIGHT_BRACE
+Token: }
+
+Token type: RIGHT_BRACE
+Token: }
+
+Token type: IDENTIFIER
+Token: if
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: num_bytes_read
+
+Token type: GT_EQUAL
+Token: >=
+
+Token type: INTEGER
+Token: 2
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: half_num_bytes_read
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: num_bytes_read
+
+Token type: MINUS
+Token: -
+
+Token type: INTEGER
+Token: 1
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: DIVIDE
+Token: /
+
+Token type: INTEGER
+Token: 2
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: INTEGER
+Token: 0
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: IDENTIFIER
+Token: is_palindrome
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: IDENTIFIER
+Token: TRUE
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: IDENTIFIER
+Token: while
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: LT_EQUAL
+Token: <=
+
+Token type: IDENTIFIER
+Token: half_num_bytes_read
 
 Token type: RIGHT_PARENTHESIS
 Token: )
@@ -480,20 +405,59 @@ Token: )
 Token type: BOOLEAN_AND_OPERATOR
 Token: &&
 
-Token type: LEFT_PARENTHESIS
-Token: (
-
 Token type: IDENTIFIER
-Token: digit
-
-Token type: GT
-Token: >
-
-Token type: INTEGER
-Token: -1
+Token: is_palindrome
 
 Token type: RIGHT_PARENTHESIS
 Token: )
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: is_palindrome
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: LEFT_BRACKET
+Token: [
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: RIGHT_BRACKET
+Token: ]
+
+Token type: BOOLEAN_EQUAL
+Token: ==
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: LEFT_BRACKET
+Token: [
+
+Token type: IDENTIFIER
+Token: num_bytes_read
+
+Token type: MINUS
+Token: -
+
+Token type: INTEGER
+Token: 1
+
+Token type: MINUS
+Token: -
+
+Token type: IDENTIFIER
+Token: i
+
+Token type: RIGHT_BRACKET
+Token: ]
 
 Token type: SEMICOLON
 Token: ;
@@ -513,86 +477,32 @@ Token: +
 Token type: INTEGER
 Token: 1
 
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: ASSIGNMENT
-Token: =
-
-Token type: IDENTIFIER
-Token: hexdigit2int
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: hexnum
-
-Token type: LEFT_BRACKET
-Token: [
-
-Token type: IDENTIFIER
-Token: i
-
-Token type: RIGHT_BRACKET
-Token: ]
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: SEMICOLON
-Token: ;
-
-Token type: IDENTIFIER
-Token: if
-
-Token type: LEFT_PARENTHESIS
-Token: (
-
-Token type: IDENTIFIER
-Token: digit
-
-Token type: GT
-Token: >
-
-Token type: INTEGER
-Token: -1
-
-Token type: RIGHT_PARENTHESIS
-Token: )
-
-Token type: LEFT_BRACE
-Token: {
-
-Token type: IDENTIFIER
-Token: number
-
-Token type: ASSIGNMENT
-Token: =
-
-Token type: IDENTIFIER
-Token: number
-
-Token type: INTEGER
-Token: 16
-
-Token type: PLUS
-Token: +
-
-Token type: IDENTIFIER
-Token: digit
-
 Token type: SEMICOLON
 Token: ;
 
 Token type: RIGHT_BRACE
 Token: }
+
+Token type: RIGHT_BRACE
+Token: }
+
+Token type: IDENTIFIER
+Token: else
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: is_palindrome
+
+Token type: ASSIGNMENT
+Token: =
+
+Token type: IDENTIFIER
+Token: FALSE
+
+Token type: SEMICOLON
+Token: ;
 
 Token type: RIGHT_BRACE
 Token: }
@@ -604,13 +514,28 @@ Token type: LEFT_PARENTHESIS
 Token: (
 
 Token type: IDENTIFIER
-Token: digit
+Token: num_bytes_read
 
 Token type: GT
 Token: >
 
 Token type: INTEGER
-Token: -1
+Token: 0
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: if
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: IDENTIFIER
+Token: is_palindrome
 
 Token type: RIGHT_PARENTHESIS
 Token: )
@@ -628,7 +553,7 @@ Token type: DOUBLE_QUOTE
 Token: "
 
 Token type: STRING
-Token: Hex: 0x%s is %d decimal\n
+Token: %s is a palindrome\n
 
 Token type: DOUBLE_QUOTE
 Token: "
@@ -637,19 +562,52 @@ Token type: COMMA
 Token: ,
 
 Token type: IDENTIFIER
-Token: hexnum
-
-Token type: COMMA
-Token: ,
-
-Token type: IDENTIFIER
-Token: number
+Token: buffer
 
 Token type: RIGHT_PARENTHESIS
 Token: )
 
 Token type: SEMICOLON
 Token: ;
+
+Token type: RIGHT_BRACE
+Token: }
+
+Token type: IDENTIFIER
+Token: else
+
+Token type: LEFT_BRACE
+Token: {
+
+Token type: IDENTIFIER
+Token: printf
+
+Token type: LEFT_PARENTHESIS
+Token: (
+
+Token type: DOUBLE_QUOTE
+Token: "
+
+Token type: STRING
+Token: %s is not a palindrome.\n
+
+Token type: DOUBLE_QUOTE
+Token: "
+
+Token type: COMMA
+Token: ,
+
+Token type: IDENTIFIER
+Token: buffer
+
+Token type: RIGHT_PARENTHESIS
+Token: )
+
+Token type: SEMICOLON
+Token: ;
+
+Token type: RIGHT_BRACE
+Token: }
 
 Token type: RIGHT_BRACE
 Token: }

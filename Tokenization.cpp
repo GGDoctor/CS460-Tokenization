@@ -206,9 +206,9 @@ vector<Token> tokenize(const string& input) {
             
                 break;
 
-            case '\\':
+            case '/':
                 inputToken.type = DIVIDE;
-                inputToken.character = "\\";
+                inputToken.character = "/";
                 tokens.push_back(inputToken);
                 break;
 
@@ -293,21 +293,6 @@ vector<Token> tokenize(const string& input) {
                 break;
 
             default:
-                if (isdigit(input[i])) {
-                    while (isdigit(input[i])) {
-                        inputToken.character += input[i++];
-                    }
-                    inputToken.type = INTEGER;
-                } else {
-                    while (!isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
-                        inputToken.character += input[i++];
-                    }
-                    inputToken.type = IDENTIFIER;
-                }
-                i--; // Move back one position to handle the next character correctly
-                tokens.push_back(inputToken);
-                break;
-
                 if (std::isdigit(input[i])) {
                     while (!std::isspace(input[i]) && !(std::find( listOfSymbols.begin(), listOfSymbols.end(), input[i]) != listOfSymbols.end())) {
                         if (!isdigit(input[i])) {
@@ -543,13 +528,10 @@ enum State {
                 }else if (currentChar == '\n'){ //Check for new line
                     result += currentChar;
                     line += 1; 
-                }else if (currentChar == '*'){  //Check if  */ appears before  /* 
-                    char nextChar = inputFile.peek();
-                    state = (nextChar == '/') ? Error : ANYTHING;
                 } else {
                     result += currentChar;
                 }
-                cout << currentChar;
+                //cout << currentChar;
                 break;
             
             //Handle Slash
